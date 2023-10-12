@@ -59,14 +59,6 @@ const chatCompletion = await openai.chat.completions.create({
 
 let response = chatCompletion.choices[0].message.content;
 
-// await fs.writeFile('output.txt', response, { flag: 'w' }, (err) => {
-//     if (err) {
-//         console.error("Error writing to file!", err);
-//     } else {
-//         console.log("Successfully wrote to file!");
-//     }
-// });
-
 try {
     await fs.writeFile(outputFile, response, { flag: 'w' });
 } catch (err) {
